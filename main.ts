@@ -49,10 +49,15 @@ function startPhase () {
     }
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    _3_Wire()
-    _4_Wire()
-    _5_Wire()
-    _6_Wire()
+    if (wireCount == 3) {
+        _3_Wire()
+    } else if (wireCount == 4) {
+        _4_Wire()
+    } else if (wireCount == 5) {
+        _5_Wire()
+    } else if (wireCount == 6) {
+        _6_Wire()
+    }
 })
 function InitSerial () {
     SerialNumber = game.askForNumber("Last Digit of Serial Number", 1)
